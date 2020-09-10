@@ -29,7 +29,6 @@ $(function () {
     })
     // AJAX请求
 
-    var url = 'http://ajax.frontend.itheima.net'
     // 注册
     //监听注册表单
     $('#reg-form').on('submit', function (e) {
@@ -38,11 +37,10 @@ $(function () {
         // 获取表单数据
         var data = $(this).serialize()
         // console.log(data);
-        var turl = url + '/api/reguser';
         //发起AJAX请求
         $.ajax({
             type: 'post',
-            url: turl,
+            url: '/api/reguser',
             data: data,
             success: function (res) {
                 if (res.status != 0) {
@@ -66,11 +64,10 @@ $(function () {
         //获取表单数据
         var data = $(this).serialize();
         // console.log(data);
-        var turl = url + '/api/login';
         // 发起ajax请求
         $.ajax({
             type: 'post',
-            url: turl,
+            url: '/api/login',
             data: data,
             success: function (res) {
                 if (res.status != 0) {
